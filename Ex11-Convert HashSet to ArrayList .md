@@ -1,51 +1,53 @@
-# Ex11 Convert HashSet to ArrayList in Java
+# Ex12 Add Elements from an Array into a TreeSet
 ## DATE:
 ## AIM:
-To convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
+To write a Java program that adds elements from an array into a TreeSet and displays the elements in sorted order.
 ## Algorithm
-1. Start the program.
-2. Read n
-3. Insert elements into a HashSet.
-4. Create an ArrayList from the HashSet.
-5. Print ArrayList elements.     
+1. Read input array
+2. Create empty TreeSet
+3. Insert all array elements into TreeSet
+4. Print TreeSet elements (in sorted order)   
 
 ## Program:
 ```
 /*
-Program to To convert a collection of distinct integers stored in a HashSet into an ArrayList and display its contents.
+Program that adds elements from an array into a TreeSet and displays the elements in sorted order.
 
 */
 ```
 ```
 import java.util.*;
 
-public class HashSetToArrayList {
+public class ArrayToTreeSet {
 
-    public static ArrayList<Integer> convertToArrayList(HashSet<Integer> set) {
-        return new ArrayList<>(set);
+    public static TreeSet<Integer> convertArrayToTreeSet(int[] arr) {
+        TreeSet<Integer> set = new TreeSet<>();
+        for(int num:arr)
+            set.add(num);
+        return set;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        HashSet<Integer> set = new HashSet<>();
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            int num = sc.nextInt();
-            set.add(num);
+            arr[i] = sc.nextInt();
         }
 
-        ArrayList<Integer> list = convertToArrayList(set);
-        System.out.println("ArrayList contents:");
-        for (int num : list) {
-            System.out.print(num + " ");
+        TreeSet<Integer> treeSet = convertArrayToTreeSet(arr);
+        System.out.println("Elements in TreeSet:");
+        for (int num : treeSet) {
+            System.out.println(num);
         }
+
         sc.close();
     }
 }
 ```
 
 ## Output:
-<img width="536" height="671" alt="image" src="https://github.com/user-attachments/assets/56b3c1df-2c3a-46ec-a97a-c1c1ef1b4fd8" />
+<img width="655" height="558" alt="image" src="https://github.com/user-attachments/assets/ebe56097-c7ba-414e-aa85-7f2e3b6a0189" />
 
 ## Result:
-The program successfully converts a collection of distinct integers stored in a HashSet into an ArrayList
+The program successfully adds elements from an array into a TreeSet.
